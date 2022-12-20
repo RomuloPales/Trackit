@@ -52,6 +52,7 @@ export default function CreateHabit({ addHabit, getHabits }) {
     return (
         <>
             <Input
+                data-test="habit-name-input"
                 value={habitName}
                 placeholder="nome do habito"
                 onChange={(e) => {
@@ -63,6 +64,7 @@ export default function CreateHabit({ addHabit, getHabits }) {
                     return (
                         <WeekDay
                             key={i}
+                            data-test="habit-day"
                             className="input-day"
                             disable={isDisable}
                             onClick={(e) => {
@@ -89,13 +91,14 @@ export default function CreateHabit({ addHabit, getHabits }) {
             </Week>
             <Buttons>
                 <Cancel
+                    data-test="habit-create-cancel-btn"
                     onClick={() => {
                         addHabit();
                     }}
                 >
                     Cancelar
                 </Cancel>
-                <Save
+                <Save data-test="habit-create-save-btn"
                     disabled={isDisable}
                     onClick={() => {
                         sendHabit();
@@ -154,6 +157,7 @@ const Input = styled.input`
     ::placeholder {
         color: #dbdbdb;
         font-size: 20px;
+        font-family: 'Lexend Deca';
     }
 `;
 
@@ -163,6 +167,7 @@ const Buttons = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-family: 'Lexend Deca'; 
     button {
         border: none;
     }
@@ -178,6 +183,7 @@ const Cancel = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Lexend Deca';
 `;
 
 const Save = styled.button`
@@ -189,4 +195,5 @@ const Save = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Lexend Deca';
 `;

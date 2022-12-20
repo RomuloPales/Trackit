@@ -43,15 +43,18 @@ export default function InputSignUp() {
     return (
         <form>
             <Inputs>
-                <input
+                <input  
+                    data-test="email-input"
                     disabled={disableButton}
                     placeholder="email"
                     value={email}
                     onChange={(e) => {
                         setEmail(e.target.value);
                     }}
+                    
                 ></input>
-                <input
+                <input 
+                    data-test="password-input"
                     disabled={disableButton}
                     placeholder="senha"
                     type="password"
@@ -61,6 +64,7 @@ export default function InputSignUp() {
                     }}
                 ></input>
                 <input
+                    data-test="user-name-input"
                     disabled={disableButton}
                     placeholder="nome"
                     value={name}
@@ -69,6 +73,7 @@ export default function InputSignUp() {
                     }}
                 ></input>
                 <input
+                    data-test="user-image-input" 
                     disabled={disableButton}
                     placeholder="foto"
                     value={image}
@@ -77,6 +82,7 @@ export default function InputSignUp() {
                     }}
                 ></input>
                 <button
+                    data-test="signup-btn" 
                     disabled={disableButton}
                     type="submit"
                     onClick={() => {
@@ -84,7 +90,7 @@ export default function InputSignUp() {
                         register();
                     }}
                 >
-                    Entrar
+                    Cadastrar
                 </button>
             </Inputs>
         </form>

@@ -100,12 +100,12 @@ export default function Today() {
         <>
             <Header/>
             <Container>
-                <div className="title">
+                <div className="title" data-test="today">
                     <p className="title">
                         {dayjs(Date()).locale('pt-br').format('dddd, DD/MM')}
                     </p>
                 </div>
-                <div className="subtitle">
+                <div className="subtitle"  data-test="today-counter" >
                     {context.percentage === 0 ? (
                         <p>Nenhum habito concluido ainda</p>
                     ) : (
@@ -115,10 +115,10 @@ export default function Today() {
                 <ul>
                     {today.map((habit, i) => {
                         return (
-                            <li key={habit.id}>
+                            <li key={habit.id} data-test="today-habit-container" >
                                 <div>
-                                    <h1>{habit.name}</h1>
-                                    <h2>
+                                    <h1 data-test="today-habit-name">{habit.name}</h1>
+                                    <h2 data-test="today-habit-sequence">
                                         Sequencia atual:{' '}
                                         <Span
                                             color={
@@ -128,7 +128,7 @@ export default function Today() {
                                             {habit.currentSequence}
                                         </Span>
                                     </h2>
-                                    <h2>
+                                    <h2 data-test="today-habit-record" >
                                         Seu recorde:{' '}
                                         <Span
                                             color={
@@ -142,7 +142,7 @@ export default function Today() {
                                         </Span>
                                     </h2>
                                 </div>
-                                <Checkbox
+                                <Checkbox  data-test="today-habit-check-btn"
                                     onClick={() => {
                                         changeStyle();
                                         changeHabit(habit);

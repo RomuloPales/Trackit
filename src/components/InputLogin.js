@@ -42,6 +42,7 @@ export default function InputLogin({ setUser }) {
         <form>
             <Inputs>
                 <input
+                    data-test="email-input"
                     value={email}
                     placeholder="email"
                     disabled={disableButton}
@@ -50,6 +51,7 @@ export default function InputLogin({ setUser }) {
                     }}
                 ></input>
                 <input
+                    data-test="password-input"
                     value={password}
                     onChange={(e) => {
                         setPassword(e.target.value);
@@ -60,6 +62,7 @@ export default function InputLogin({ setUser }) {
                 ></input>
 
                 <button
+                    data-test="login-btn"
                     type="submit"
                     disabled={disableButton}
                     onClick={() => {

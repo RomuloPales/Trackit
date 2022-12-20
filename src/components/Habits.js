@@ -82,7 +82,9 @@ export default function Habits() {
                 <div>
                     <p>Meus Habitos</p>
                     <IconContext.Provider
+                        
                         value={{ color: '#52b6ff', size: '3em' }}
+                        data-test="habit-create-btn"
                     >
                         <MdAddBox
                             onClick={(e) => {
@@ -92,7 +94,7 @@ export default function Habits() {
                     </IconContext.Provider>
                 </div>
             </AddHabit>
-            <AddingHabit>
+            <AddingHabit data-test="habit-create-container">
                 <div hidden={isHidden}>
                     <CreateHabit addHabit={addHabit} getHabits={getHabits} />
                 </div>
@@ -106,12 +108,13 @@ export default function Habits() {
                 ) : (
                     habits.map((habit, i) => {
                         return (
-                            <li key={habit.id}>
-                                <p>{habit.name}</p>
-                                <div className="buttons">
+                            <li data-test="habit-container"
+                                key={habit.id}>
+                                <p data-test="habit-name" >{habit.name}</p>
+                                <div className="buttons" >
                                     {week.map((day, j) => {
                                         return (
-                                            <WeekDay
+                                            <WeekDay data-test="habit-day"
                                                 key={j}
                                                 bgColor={
                                                     !habit.days.includes(j)
@@ -129,7 +132,7 @@ export default function Habits() {
                                         );
                                     })}
                                 </div>
-                                <button className="trash">
+                                <button className="trash" data-test="habit-delete-btn" >
                                     <BsTrash
                                         onClick={() => {
                                             deletConfirmation(habit);
@@ -196,6 +199,8 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-family: 'Lexend Deca';
+
         div {
             width: 80%;
             display: flex;
@@ -230,11 +235,11 @@ const Container = styled.div`
         width: 90%;
         color: #666666;
         font-size: 18px;
-        font-family: 'Lexend Deca';
         font-style: normal;
         font-weight: 400;
         font-size: 22.976px;
         line-height: 29px;
+        font-family: 'Lexend Deca';
     }
     .trash {
         background: none;
@@ -245,9 +250,11 @@ const Container = styled.div`
     }
     .cancel {
         background: #52b6ff;
+        font-family: 'Lexend Deca';
     }
     .delet {
         background: #aa0000;
+        font-family: 'Lexend Deca';
     }
 `;
 
@@ -276,6 +283,7 @@ const AddHabit = styled.div`
     p {
         color: #126ba5;
         font-size: 23px;
+        font-family: 'Lexend Deca';
     }
 `;
 

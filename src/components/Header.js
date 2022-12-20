@@ -13,13 +13,15 @@ export default function Header() {
     }
 
     return (
-        <Top>
+        <Top data-test="header">
             <div className="container">
-                <Link to="/">
+                <Link to="/hoje">
                     <img src={TrackIt} alt="logo" key="logo" />
                 </Link>
                 <div>
+                <Link to="/">
                     <img className="user-image" src={user.image} key="user" alt="user" />
+                 </Link>
                 </div>
             </div>
         </Top>

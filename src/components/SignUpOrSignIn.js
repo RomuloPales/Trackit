@@ -6,8 +6,8 @@ export default function SignUpOrSignIn({ option }) {
         <LinkSignUpOrSignIn>
             <Link to={option ? '/cadastro' : '/'}>
                 {option
-                    ? <p>Nao tem uma conta? Cadastre-se!</p>
-                    : <p>Ja tem uma conta? Faça Login!</p>}
+                    ? <p  data-test="signup-link" >Nao tem uma conta? Cadastre-se!</p>
+                    : <p  data-test="login-link" >Ja tem uma conta? Faça Login!</p>}
             </Link>
         </LinkSignUpOrSignIn>
     );

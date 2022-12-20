@@ -9,11 +9,11 @@ export default function Menu() {
     const context = useContext(PercentageContext);
     return (
         <Footer>
-            <div className="container">
-                <Link to="/habitos">
+            <div className="container" data-test="menu">
+                <Link to="/habitos" data-test="habit-link"  >
                     <p>Habitos</p>
                 </Link>
-                <Link to="/hoje">
+                <Link to="/hoje" data-test="today-link">
                     <Today>
                         <CircularProgressbar
                             background={true}
@@ -29,7 +29,7 @@ export default function Menu() {
                         ></CircularProgressbar>
                     </Today>
                 </Link>
-                <Link to="/historico">
+                <Link to="/historico" data-test="history-link">
                     <p>Historico</p>
                 </Link>
             </div>
